@@ -42,16 +42,19 @@
     },
     initTable: function(table) {
       var i, th, ths, _i, _len, _ref;
-      if (((_ref = table.tHead) != null ? _ref.rows.length : void 0) !== 1) {
+      if (((_ref = table.tHead) != null ? _ref.rows.length : void 0) == 0) {
         return;
       }
       if (table.getAttribute('data-sortable-initialized') === 'true') {
         return;
       }
       table.setAttribute('data-sortable-initialized', 'true');
-      ths = table.querySelectorAll('th');
+      ths = table.querySelectorAll('tr:last-child th');
       for (i = _i = 0, _len = ths.length; _i < _len; i = ++_i) {
         th = ths[i];
+        if (th.getAttribute('data-sorted') !== 'true') {
+          th.setAttribute('data-sorted', 'false');
+        }
         if (th.getAttribute('data-sortable') !== 'false') {
           sortable.setupClickableTH(table, th, i);
         }
