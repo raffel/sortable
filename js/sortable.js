@@ -40,7 +40,7 @@
       }
       return _results;
     },
-    initTable: function(table) {
+    initTable: function(table, sortFirstRow) {
       var i, th, ths, _i, _len, _ref;
       if (((_ref = table.tHead) != null ? _ref.rows.length : void 0) == 0) {
         return;
@@ -49,7 +49,7 @@
         return;
       }
       table.setAttribute('data-sortable-initialized', 'true');
-      ths = table.querySelectorAll('tr:last-child th');
+      ths = table.querySelectorAll(sortFirstRow ? 'tr:first-child th' : 'tr:last-child th');
       for (i = _i = 0, _len = ths.length; _i < _len; i = ++_i) {
         th = ths[i];
         if (th.getAttribute('data-sorted') !== 'true') {
