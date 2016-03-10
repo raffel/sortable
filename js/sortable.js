@@ -197,7 +197,7 @@
       name: 'numeric',
       defaultSortDirection: 'descending',
       match: function(a) {
-        return a.match(numberRegExp);
+        return a == '' || a.match(numberRegExp);
       },
       comparator: function(a) {
         return parseFloat(a.replace(/[^0-9.-]/g, ''), 10) || 0;
