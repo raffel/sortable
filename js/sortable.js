@@ -195,7 +195,7 @@
   sortable.setupTypes([
     {
       name: 'numeric',
-      defaultSortDirection: 'descending',
+      defaultSortDirection: 'ascending',
       match: function(a) {
         return a == '' || a.match(numberRegExp);
       },
