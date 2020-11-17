@@ -4,6 +4,7 @@
   "description": "The simplest, most elegant way to sort a table.",
   "author": "Adam Schwartz <adam.flynn.schwartz@gmail.com>",
   "license": "MIT",
+  "main": "js/sortable.js",
   "devDependencies": {
     "grunt-contrib-coffee": "~0.7.0",
     "coffee-script": "~1.6.3",
